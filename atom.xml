@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Heritri</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://heritri.com/"/>
+  <updated>2020-02-07T03:39:54.592Z</updated>
+  <id>http://heritri.com/</id>
+  
+  <author>
+    <name>Heri tri</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Monitoring Proses Di Linux Dengan TOP Command</title>
+    <link href="http://heritri.com/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/"/>
+    <id>http://heritri.com/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/</id>
+    <published>2020-02-06T06:49:48.000Z</published>
+    <updated>2020-02-07T03:39:54.592Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TOP! Kali ini saya akan berbagi pengalaman dan sedikit ilmu dalam dunia Linux. Saya sendiri bukan orang yang &lt;em&gt;expert&lt;/em&gt; di bidang linux, tapi saya akan &lt;em&gt;share&lt;/em&gt; bagaimana cara memonitor linux secara real time dalam hal kinerja sistem seperti CPU, Memory, Serta Proses yang sedang berjalan.&lt;/p&gt;
+&lt;p&gt;Perintah yang kita gunakan untuk memonitor linux ini adalah dengan perintah &lt;strong&gt;TOP&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Oh ya, perintah TOP ini sangat bermanfaat dan sering digunakan jika di dalam server linux kamu terdapat beberapa website. Ketika salah satu website di server tersebut DOWN, kita bisa memantau website mana yang DOWN, apakah karena murni Traffic pengunjung atau di DDOS, atau ada IP yang SPAMMING ke website kita.&lt;/p&gt;
+&lt;p&gt;OK, langsung kita praktekkan perintah TOP ini.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://heritri.com/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="http://heritri.com/tags/linux/"/>
+    
+      <category term="monitoring" scheme="http://heritri.com/tags/monitoring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Menampilkan Error di Halaman Blank PHP</title>
+    <link href="http://heritri.com/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/"/>
+    <id>http://heritri.com/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/</id>
+    <published>2020-01-29T07:15:54.000Z</published>
+    <updated>2020-02-07T03:40:44.558Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Adakalanya ketika kita mengakses website atau halaman web yang kita bangun, kita hanya ditampilkan halaman BLANK putih saja, yang membuat kita bingung apa yang terjadi di web tersebut.&lt;br&gt;Untuk menampilkan error di website yang menggunakan PHP, &lt;em&gt;copy&lt;/em&gt; dan &lt;em&gt;paste&lt;/em&gt; kode berikut di file php yang ingin kamu debug. Pastikan kamu meletakkan kode berikut di baris paling awal.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="http://heritri.com/categories/PHP/"/>
+    
+    
+      <category term="php" scheme="http://heritri.com/tags/php/"/>
+    
+      <category term="web" scheme="http://heritri.com/tags/web/"/>
+    
+      <category term="error" scheme="http://heritri.com/tags/error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mengatasi Masalah Akses Database Mysql Di Laravel</title>
+    <link href="http://heritri.com/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/"/>
+    <id>http://heritri.com/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/</id>
+    <published>2020-01-13T03:06:08.000Z</published>
+    <updated>2020-02-07T03:40:38.326Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Mulanya saya export database Mysql dari MAMP dan saya import ke XAMPP.&lt;br&gt;Dan ketika project saya jalankan, muncul lah pesan error koneksi ke database gagal (Access denied for user ‘root’@’localhost’). Padahal semua settingan database pada Project laravel saya sudah saya pastikan 100% benar dan tidak ada yang terlupakan.&lt;/p&gt;
+&lt;p&gt;Akhirnya browsing2 di google dan stackoverflow, saya menemukan solusinya.&lt;br&gt;Cukup ketikkan salah satu command di bawah ini melalui terminal atau command prompt tepat pada directory project laravel kamu.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Laravel" scheme="http://heritri.com/categories/Laravel/"/>
+    
+    
+      <category term="laravel" scheme="http://heritri.com/tags/laravel/"/>
+    
+      <category term="mysql" scheme="http://heritri.com/tags/mysql/"/>
+    
+  </entry>
+  
+</feed>
