@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heritri.com/"/>
-  <updated>2020-03-07T03:50:11.854Z</updated>
+  <updated>2020-03-07T03:53:17.885Z</updated>
   <id>http://heritri.com/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="http://heritri.com/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/"/>
     <id>http://heritri.com/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/</id>
     <published>2020-03-02T01:40:37.000Z</published>
-    <updated>2020-03-07T03:50:11.854Z</updated>
+    <updated>2020-03-07T03:53:17.885Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Sangat banyak sekali &lt;em&gt;package&lt;/em&gt; Laravel untuk membuat laporan dalam bentuk PDF. Nah kali
-        
-      
+      &lt;p&gt;Sangat banyak sekali &lt;em&gt;package&lt;/em&gt; Laravel untuk membuat laporan dalam bentuk PDF. Nah kali ini kita akan meggunakan &lt;em&gt;package&lt;/em&gt; &lt;strong&gt;Laravel Snappy&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Kenapa Laravel Snappy ?&lt;/p&gt;
+&lt;p&gt;Dari yang saya coba di beberapa aplikasi yang saya buat dengan &lt;em&gt;package&lt;/em&gt; Laravel Snappy. &lt;em&gt;Package&lt;/em&gt; ini dapat menampilkan Grafik pada PDF dengan cepat, dan juga menampilkan halaman pdf yang berisi teks biasa, tabel, gambar dan konten lainnya secara cepat. Kenapa bisa cepat ? di Laravel Snappy prinsip kerjanya adalah mengubah tampilan (&lt;em&gt;view&lt;/em&gt;) yang kita desain dalam kode HTML biasa menjadi file PDF dengan sangat cepat ketimbang &lt;em&gt;package&lt;/em&gt; lainnya untuk membuat PDF di laravel.&lt;/p&gt;
+&lt;p&gt;Oh ya, sebelum lanjut ke tutorialnya saya disini menginstall web laravel saya di &lt;em&gt;server&lt;/em&gt; ubuntu 18.04. Nah, jika kamu yang menginstal web laravelnya di hosting atau &lt;em&gt;shared&lt;/em&gt; hosting tenang saja, nanti akan saya jelaskan sedikit perbedaanya saat pemasangan &lt;em&gt;package&lt;/em&gt; ini.&lt;/p&gt;
+&lt;p&gt;Oke kita mulai..&lt;/p&gt;
     
     </summary>
     
