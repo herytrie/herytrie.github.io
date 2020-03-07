@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heritri.com/"/>
-  <updated>2020-02-07T03:39:54.592Z</updated>
+  <updated>2020-03-07T03:50:11.854Z</updated>
   <id>http://heritri.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Membuat Report PDF Laravel Dengan Package Laravel Snappy</title>
+    <link href="http://heritri.com/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/"/>
+    <id>http://heritri.com/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/</id>
+    <published>2020-03-02T01:40:37.000Z</published>
+    <updated>2020-03-07T03:50:11.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Sangat banyak sekali &lt;em&gt;package&lt;/em&gt; Laravel untuk membuat laporan dalam bentuk PDF. Nah kali
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Laravel" scheme="http://heritri.com/categories/Laravel/"/>
+    
+    
+      <category term="laravel" scheme="http://heritri.com/tags/laravel/"/>
+    
+      <category term="pdf" scheme="http://heritri.com/tags/pdf/"/>
+    
+      <category term="report" scheme="http://heritri.com/tags/report/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Monitoring Proses Di Linux Dengan TOP Command</title>
     <link href="http://heritri.com/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/"/>
     <id>http://heritri.com/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/</id>
     <published>2020-02-06T06:49:48.000Z</published>
-    <updated>2020-02-07T03:39:54.592Z</updated>
+    <updated>2020-03-02T02:06:11.796Z</updated>
     
     <summary type="html">
     
@@ -47,7 +78,7 @@
     <link href="http://heritri.com/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/"/>
     <id>http://heritri.com/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/</id>
     <published>2020-01-29T07:15:54.000Z</published>
-    <updated>2020-02-07T03:40:44.558Z</updated>
+    <updated>2020-03-02T02:03:52.813Z</updated>
     
     <summary type="html">
     
@@ -72,7 +103,7 @@
     <link href="http://heritri.com/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/"/>
     <id>http://heritri.com/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/</id>
     <published>2020-01-13T03:06:08.000Z</published>
-    <updated>2020-02-07T03:40:38.326Z</updated>
+    <updated>2020-03-02T01:49:55.140Z</updated>
     
     <summary type="html">
     

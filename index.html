@@ -130,7 +130,127 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
     
 <div class="card">
-    <!--  -->
+    <!-- 
+    <div class="card-image">
+        <a href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Membuat Report PDF Laravel Dengan Package Laravel Snappy">
+        </a>
+    </div>
+     -->
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-02T01:40:37.000Z">2020-03-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Laravel/">Laravel</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 560 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/">Membuat Report PDF Laravel Dengan Package Laravel Snappy</a>
+            
+        </h1>
+        <div class="content">
+            <p>Sangat banyak sekali <em>package</em> Laravel untuk membuat laporan dalam bentuk PDF. Nah kali ini kita akan meggunakan <em>package</em> <strong>Laravel Snappy</strong>.</p>
+<p>Kenapa Laravel Snappy ?</p>
+<p>Dari yang saya coba di beberapa aplikasi yang saya buat dengan <em>package</em> Laravel Snappy. <em>Package</em> ini dapat menampilkan Grafik pada PDF dengan cepat, dan juga menampilkan halaman pdf yang berisi teks biasa, tabel, gambar dan konten lainnya secara cepat. Kenapa bisa cepat ? di Laravel Snappy prinsip kerjanya adalah mengubah tampilan (<em>view</em>) yang kita desain dalam kode HTML biasa menjadi file PDF dengan sangat cepat ketimbang <em>package</em> lainnya untuk membuat PDF di laravel.</p>
+<p>Oh ya, sebelum lanjut ke tutorialnya saya disini menginstall web laravel saya di <em>server</em> ubuntu 18.04. Nah, jika kamu yang menginstal web laravelnya di hosting atau <em>shared</em> hosting tenang saja, nanti akan saya jelaskan sedikit perbedaanya saat pemasangan <em>package</em> ini.</p>
+<p>Oke kita mulai..</p>
+<h1 id="Proses-Instalasi"><a href="#Proses-Instalasi" class="headerlink" title="Proses Instalasi"></a>Proses Instalasi</h1><ol>
+<li>Install dependecies yang diperlukan</li>
+</ol>
+<p><strong>Note</strong>. Jika kamu menginstall di server 32 bit install depedencies berikut.<br>Ketik di terminal</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ composer require h4cc/wkhtmltopdf-i386 0.12.x</span><br><span class="line">$ composer require h4cc/wkhtmltoimage-i386 0.12.x</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note</strong>. Jika kamu menginstall di server 64 bit install depedencies berikut.<br>Ketik di terminal</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ composer require h4cc/wkhtmltopdf-amd64 0.12.x</span><br><span class="line">$ composer require h4cc/wkhtmltoimage-amd64 0.12.x</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Install package yang diperlukan</li>
+</ol>
+<p>Install package berikut, ketik di terminal</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require barryvdh/laravel-snappy</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Konfigurasi package yang telah di install</li>
+</ol>
+<p>Buka projek laravel kamu, masuk ke folder config. Lalu buka file <strong>app.php</strong>.</p>
+<p><img src="/gallery/configapp.png" alt=""></p>
+<p>Pada bagian providers tambahkan class package seperti diatas. dan pada bagian aliases tambahkan class PDF dan class SnappyImage.</p>
+<ol start="4">
+<li>Publish vendor folder</li>
+</ol>
+<p>Jalankan perintah berikut di terminal</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish --provider=<span class="string">"Barryvdh\Snappy\ServiceProvider"</span></span><br></pre></td></tr></table></figure>
+
+<p>Oke, setelah maluli tahap proses instalasi, kita akan masuk ke tahapan konfigurasi yang cukup melelahkan, hehehhe. </p>
+<h1 id="Tahap-Konfigurasi"><a href="#Tahap-Konfigurasi" class="headerlink" title="Tahap Konfigurasi"></a>Tahap Konfigurasi</h1><p>Ketik di terminal </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp vendor/h4cc/wkhtmltoimage-amd64/bin/wkhtmltoimage-amd64 /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+<p>Lalu ketik lagi</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64 /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note :</strong> Jika kamu menginstall web laravel nya di server langsung ikuti cara ini, jika di shared hosting abaikan tahapan ini.</p>
+<p>Setelah menjalankan perintah copy diatas, selanjutnya set kedua folder di lokasi tujuan copy diatas menjadi permission 777.</p>
+<p>Ketik lagi</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 /usr/<span class="built_in">local</span>/bin/wkhtmltoimage-amd64</span><br><span class="line">chmod -R 777 /usr/<span class="built_in">local</span>/bin/wkhtmltopdf-amd64</span><br></pre></td></tr></table></figure>
+
+<p>Sekarang lakukan konfigurasi pada file projek laravel kamu <strong>config/snappy.php</strong>.</p>
+<p><strong>Untuk yang menginstall di server langsung</strong></p>
+<p>Sesuaikan isi nya dengan isi berikut.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'pdf'</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'enabled'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary'</span>  =&gt; <span class="string">'/usr/local/bin/wkhtmltopdf-amd64'</span>,</span><br><span class="line">        <span class="string">'timeout'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'options'</span> =&gt; <span class="keyword">array</span>(),</span><br><span class="line">        <span class="string">'env'</span>     =&gt; <span class="keyword">array</span>(),</span><br><span class="line">    ),</span><br><span class="line">    <span class="string">'image'</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'enabled'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary'</span>  =&gt; <span class="string">'/usr/local/bin/wkhtmltoimage-amd64'</span>,</span><br><span class="line">        <span class="string">'timeout'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'options'</span> =&gt; <span class="keyword">array</span>(),</span><br><span class="line">        <span class="string">'env'</span>     =&gt; <span class="keyword">array</span>(),</span><br><span class="line">    ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Untuk yang menginstall di shared hosting</strong></p>
+<p>Sesuaikan isi nya dengan isi berikut.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'pdf'</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'enabled'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary'</span>  =&gt; base_path(<span class="string">'vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64'</span>),</span><br><span class="line">        <span class="string">'timeout'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'options'</span> =&gt; <span class="keyword">array</span>(),</span><br><span class="line">        <span class="string">'env'</span>     =&gt; <span class="keyword">array</span>(),</span><br><span class="line">    ),</span><br><span class="line">    <span class="string">'image'</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'enabled'</span> =&gt; <span class="keyword">true</span>,</span><br><span class="line">        <span class="string">'binary'</span>  =&gt; base_path(<span class="string">'vendor/h4cc/wkhtmltoimage-amd64/bin/wkhtmltoimage-amd64'</span>),</span><br><span class="line">        <span class="string">'timeout'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">        <span class="string">'options'</span> =&gt; <span class="keyword">array</span>(),</span><br><span class="line">        <span class="string">'env'</span>     =&gt; <span class="keyword">array</span>(),</span><br><span class="line">    ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>SELESAI…. Kamu bisa mencoba untuk mengenerate file PDF di laravel</strong></p>
+<p>Untuk penggunaan Laravel Snappy sendiri kamu bisa langsung cek dokumentasinya di </p>
+<p><a href="https://github.com/barryvdh/laravel-snappy">https://github.com/barryvdh/laravel-snappy</a></p>
+<h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><p>Jika setelah melakukan tahapan instalasi dan kofigutasi kamu dapati error</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The <span class="built_in">exit</span> status code <span class="string">'1'</span> says something went wrong:</span><br><span class="line">stderr: <span class="string">"blablablabalbalba"</span></span><br></pre></td></tr></table></figure>
+
+<p>Berikut solusi nya untuk ubuntu 18.04</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libssl1.0-dev</span><br></pre></td></tr></table></figure>
+
+<p>untuk ubuntu 14.04</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libssl-dev=1.0.1f-1ubuntu2.25</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    <!-- 
+    <div class="card-image">
+        <a href="/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/ubuntu-logo.png" alt="Monitoring Proses Di Linux Dengan TOP Command">
+        </a>
+    </div>
+     -->
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -189,7 +309,7 @@
     <!-- 
     <div class="card-image">
         <a href="/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/heritri.png" alt="Menampilkan Error di Halaman Blank PHP">
+            <img class="thumbnail" src="/gallery/php-logo.png" alt="Menampilkan Error di Halaman Blank PHP">
         </a>
     </div>
      -->
@@ -248,7 +368,7 @@
     <!-- 
     <div class="card-image">
         <a href="/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/heritri.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
+            <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
         </a>
     </div>
      -->
@@ -348,7 +468,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            3
+                            4
                         </p>
                     </a>
                 </div>
@@ -372,7 +492,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            7
+                            9
                         </p>
                     </a>
                 </div>
@@ -473,7 +593,7 @@
                 <span class="level-item">Laravel</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Linux/">
@@ -502,7 +622,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+        <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/laravel/" style="font-size: 20px;">laravel</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/report/" style="font-size: 10px;">report</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
     </div>
 </div>
     
@@ -517,9 +637,28 @@
         
         <article class="media">
             
+            <a href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Membuat Report PDF Laravel Dengan Package Laravel Snappy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T01:40:37.000Z">2020-03-02</time></div>
+                    <a href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Membuat Report PDF Laravel Dengan Package Laravel Snappy</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Laravel/">Laravel</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Monitoring Proses Di Linux Dengan TOP Command">
+                    <img class="thumbnail" src="/gallery/ubuntu-logo.png" alt="Monitoring Proses Di Linux Dengan TOP Command">
                 </p>
             </a>
             
@@ -538,7 +677,7 @@
             
             <a href="/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/heritri.png" alt="Menampilkan Error di Halaman Blank PHP">
+                    <img class="thumbnail" src="/gallery/php-logo.png" alt="Menampilkan Error di Halaman Blank PHP">
                 </p>
             </a>
             
@@ -557,7 +696,7 @@
             
             <a href="/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/heritri.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
+                    <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
                 </p>
             </a>
             
@@ -582,6 +721,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/02/">
@@ -628,7 +778,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/laravel/">
                         <span class="tag">laravel</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -654,8 +804,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/pdf/">
+                        <span class="tag">pdf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/php/">
                         <span class="tag">php</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/report/">
+                        <span class="tag">report</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -691,9 +855,28 @@
         
         <article class="media">
             
+            <a href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Membuat Report PDF Laravel Dengan Package Laravel Snappy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T01:40:37.000Z">2020-03-02</time></div>
+                    <a href="/2020/03/02/Membuat-Report-PDF-Laravel-Dengan-Package-Laravel-Snappy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Membuat Report PDF Laravel Dengan Package Laravel Snappy</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Laravel/">Laravel</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/06/Monitoring-Proses-Di-Linux-Dengan-TOP-Command/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Monitoring Proses Di Linux Dengan TOP Command">
+                    <img class="thumbnail" src="/gallery/ubuntu-logo.png" alt="Monitoring Proses Di Linux Dengan TOP Command">
                 </p>
             </a>
             
@@ -712,7 +895,7 @@
             
             <a href="/2020/01/29/Menampilkan-Error-di-Halaman-Blank-PHP/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/heritri.png" alt="Menampilkan Error di Halaman Blank PHP">
+                    <img class="thumbnail" src="/gallery/php-logo.png" alt="Menampilkan Error di Halaman Blank PHP">
                 </p>
             </a>
             
@@ -731,7 +914,7 @@
             
             <a href="/2020/01/13/Mengatasi-Masalah-Akses-Database-Mysql-Di-Laravel/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/heritri.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
+                    <img class="thumbnail" src="/gallery/laravel-logo.png" alt="Mengatasi Masalah Akses Database Mysql Di Laravel">
                 </p>
             </a>
             
@@ -756,6 +939,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/02/">
@@ -802,7 +996,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/laravel/">
                         <span class="tag">laravel</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -828,8 +1022,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/pdf/">
+                        <span class="tag">pdf</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/php/">
                         <span class="tag">php</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/report/">
+                        <span class="tag">report</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
