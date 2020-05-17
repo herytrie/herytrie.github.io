@@ -1,3 +1,4 @@
+/*family-sans = "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif*/
 /* ---------------------------------
  *       Override CSS Framework
  * --------------------------------- */
@@ -26,13 +27,6 @@ a.navbar-item:hover {
 }
 body {
   background-color: #f7f7f7;
-}
-body,
-button,
-input,
-select,
-textarea {
-  font-family: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 }
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
