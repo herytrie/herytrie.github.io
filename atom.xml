@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heritri.com/"/>
-  <updated>2020-03-07T03:53:17.885Z</updated>
+  <updated>2020-06-17T16:10:01.622Z</updated>
   <id>http://heritri.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cara Mengetahui Lokasi ATM BCA Terdekat dengan VIRA</title>
+    <link href="http://heritri.com/2020/06/17/Cara-Mengetahui-Lokasi-ATM-BCA-Terdekat-dengan-VIRA/"/>
+    <id>http://heritri.com/2020/06/17/Cara-Mengetahui-Lokasi-ATM-BCA-Terdekat-dengan-VIRA/</id>
+    <published>2020-06-17T14:54:21.000Z</published>
+    <updated>2020-06-17T16:10:01.622Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Saat kita tiba di suatu daerah, adakalanya kita ingin untuk menarik uang tunai melalui ATM terdekat. Ya, biasanya kita akan mencari ATM terdekat yang sesuai dengan bank kartu ATM kita. Dalam artikel ini adalah bank BCA.&lt;/p&gt;
+&lt;p&gt;Untuk mencari lokasi &lt;strong&gt;ATM BCA Terdekat&lt;/strong&gt; kini BCA memudahkan nasabahnya dengan merilis Virtual Assistant yang bernama Vira.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="umum" scheme="http://heritri.com/categories/umum/"/>
+    
+    
+      <category term="tipstrik" scheme="http://heritri.com/tags/tipstrik/"/>
+    
+      <category term="umum" scheme="http://heritri.com/tags/umum/"/>
+    
+  </entry>
   
   <entry>
     <title>Membuat Report PDF Laravel Dengan Package Laravel Snappy</title>
